@@ -1,0 +1,54 @@
+header:
+  version: 15
+  includes:
+    - base.yaml
+
+machine: raspberrypi0-wifi
+distro: twentyfour
+target:
+  - twentyfour-console-image
+
+repos:
+  meta-raspberry:
+    url: https://git.yoctoproject.org/meta-raspberrypi
+    path: layers/meta-raspberrypi
+    branch: nanbield
+
+  meta-twentyfour:
+    layers:
+      meta-twentyfour:
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+local_conf_header:
+  reduce_diskspace: |
+    INHERIT += "rm_work_and_downloads"
+  standard: |
+    CONF_VERSION = "2"
+    PACKAGE_CLASSES ?= "package_ipk"
+    SDKMACHINE = "x86_64"
+    USER_CLASSES = "buildstats"
+    PATCHRESOLVE = "noop"
+  rpi: |
+    LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+    RPI_USE_U_BOOT = "1"
+    ENABLE_UART = "1"
+#  default-compiler: |
+#   TOOLCHAIN ?= "clang"
+#   TC_CXX_RUNTIME = "llvm"
+#   CLANGSDK = "1"
+#   C library: |
+#   TCLIBC = "musl"
+  diskmon: |
+    BB_DISKMON_DIRS = "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        HALT,${TMPDIR},100M,1K \
+        HALT,${DL_DIR},100M,1K \
+        HALT,${SSTATE_DIR},100M,1K \
+        HALT,/tmp,10M,1K"
