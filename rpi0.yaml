@@ -40,8 +40,8 @@ local_conf_header:
 #   TOOLCHAIN ?= "clang"
 #   TC_CXX_RUNTIME = "llvm"
 #   CLANGSDK = "1"
-#   C library: |
-#   TCLIBC = "musl"
+  C library: |
+   TCLIBC = "musl"
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \
