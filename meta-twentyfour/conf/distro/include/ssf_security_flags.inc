@@ -29,10 +29,8 @@ SECURITY_CFLAGS:append = " \
     "
 
 # for disabling obsolete C constructs
-# -Werror=implicit -Werror=incompatible-pointer-types -Werror=int-conversion
-SECURITY_CFLAGS:append = " \
-    -Werror=implicit -Werror=incompatible-pointer-types \
-    "
+# -Werror=int-conversion makes things break.
+SECURITY_CFLAGS:append = "-Werror=implicit -Werror=incompatible-pointer-types "
 
 # GCC only.
 SECURITY_CFLAGS:append = "-Wtrampolines"
