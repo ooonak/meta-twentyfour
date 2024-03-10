@@ -1,0 +1,18 @@
+header:
+    version: 14
+overrides:
+    repos:
+        meta-arm:
+            commit: 9a4ae38e8420b02450773fed9bb456c1f6305383
+        meta-clang:
+            commit: b71a45630d19f210079f42f6394cdde65195fb84
+        meta-openembedded:
+            commit: da9063bdfbe130f424ba487f167da68e0ce90e7d
+        meta-raspberry:
+            commit: fde68b24f08b0eac4ad4bfd3c461dc17fe3a263c
+        meta-rauc:
+            commit: 760e9926239739385348501326e522973e5091af
+        meta-security:
+            commit: 5938fa58396968cc6412b398d403e37da5b27fce
+        poky:
+            commit: 1a5c00f00c14cee3ba5d39c8c8db7a9738469eab
