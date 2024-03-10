@@ -10,7 +10,8 @@ PASSWD = "\$6\$xP4/w3BrfQnPAGEj\$2dhH4prV2hjSX49JCVXfm7Ttjepqegvr3TRT8OI0ju9cys0
 
 EXTRA_USERS_PARAMS:append = "\
     groupadd -r services; \
-    useradd -r service -G services; \
+    useradd -r service; \
+    usermod -a -G services service; \
     useradd -p '${PASSWD}' developer; \
     usermod -a -G sudo developer; \
     "
