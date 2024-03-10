@@ -29,8 +29,9 @@ SECURITY_CFLAGS:append = " \
     "
 
 # for disabling obsolete C constructs
+# -Werror=implicit -Werror=incompatible-pointer-types -Werror=int-conversion
 SECURITY_CFLAGS:append = " \
-    -Werror=implicit -Werror=incompatible-pointer-types -Werror=int-conversion \
+    -Werror=implicit -Werror=incompatible-pointer-types \
     "
 
 # GCC only.
