@@ -12,7 +12,7 @@ repos:
   meta-raspberry:
     url: https://git.yoctoproject.org/meta-raspberrypi
     path: layers/meta-raspberrypi
-    branch: nanbield
+    branch: scarthgap
 
   meta-twentyfour:
     layers:
@@ -36,12 +36,6 @@ local_conf_header:
     LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
     RPI_USE_U_BOOT = "1"
     ENABLE_UART = "1"
-#  default-compiler: |
-#   TOOLCHAIN ?= "clang"
-#   TC_CXX_RUNTIME = "llvm"
-#   CLANGSDK = "1"
-  C library: |
-   TCLIBC = "musl"
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \
