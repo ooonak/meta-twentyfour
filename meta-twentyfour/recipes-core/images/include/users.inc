@@ -9,9 +9,6 @@ EXTRA_USERS_PARAMS:append = "usermod -L -e 1 root; "
 PASSWD = "\$6\$xP4/w3BrfQnPAGEj\$2dhH4prV2hjSX49JCVXfm7Ttjepqegvr3TRT8OI0ju9cys0NRzD4tjHy4GaaQbBKaFC7aDDbfaH1Cv8YbOr4Z0"
 
 EXTRA_USERS_PARAMS:append = "\
-    groupadd -r services; \
-    useradd -r service; \
-    usermod -a -G services service; \
     useradd -p '${PASSWD}' developer; \
     usermod -a -G sudo developer; \
     "

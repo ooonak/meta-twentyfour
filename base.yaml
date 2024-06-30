@@ -35,10 +35,10 @@ repos:
     path: layers/meta-clang
     branch: scarthgap
 
-# meta-security:
-#   url: https://git.yoctoproject.org/meta-security
-#   path: layers/meta-security
-#   branch: scarthgap
+  meta-security:
+    url: https://git.yoctoproject.org/meta-security
+    path: layers/meta-security
+    branch: scarthgap
 
   meta-rauc:
     url: https://github.com/rauc/meta-rauc
